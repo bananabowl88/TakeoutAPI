@@ -3,13 +3,11 @@ import json
 import random
 
 
-#yelp_api_key = "UcIJVAd9xi0V1fFZp3bAA2AlxZWaAayRlSwTYyaSQ4JaEK_vTkeNr5_LSBW8AZrDLfnVybv1BSXXHWPCdfsecQOa4cQlqeRnrRNGW3LEloFv0ZVtH2SMffBztAtMW3Yx"
 with open('yelp_api_credentials.json') as file:
     apiData = json.load(file)
     apiKey = apiData["yelp_api_key"]
     header = {'Authorization': 'Bearer ' + str(apiKey)}
 
-#header = {'Authorization': 'Bearer UcIJVAd9xi0V1fFZp3bAA2AlxZWaAayRlSwTYyaSQ4JaEK_vTkeNr5_LSBW8AZrDLfnVybv1BSXXHWPCdfsecQOa4cQlqeRnrRNGW3LEloFv0ZVtH2SMffBztAtMW3Yx'}
 
 def get_yelp_loc(location):
     payload = {'term': 'food', 'location' : location}
